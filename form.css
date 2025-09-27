@@ -1,0 +1,114 @@
+
+
+/* Full page background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Glassmorphism card for form */
+form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 350px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(56, 249, 215, 0.5);
+}
+
+/* Login link */
+p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #eaeaea;
+}
+
+p a {
+  color: #43e97b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

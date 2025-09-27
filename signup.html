@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee</title>
+    <link rel="stylesheet" href="form.css">
+    <!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<script>
+  // signup.html aur signin.html me common check
+let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (loggedInUser) {
+  // agar user already login hai to direct redirect kardo
+  window.location.href = "main.html"; 
+}
+
+</script>
+<body>
+    
+  
+  <form>
+    <h2>Sign up</h2>
+    <label>Username:</label>
+    <input type="text" name="username" required  id="SiUsername"><br><br>
+
+    <label>Email:</label>
+    <input  name="email" required id="Siemail"><br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password" required id="Sipassword"><br><br>
+
+    <label>Confirm Password:</label>
+    <input type="password" name="confirm_password" required id="SiCpassword"><br><br>
+
+    <button type="button" onclick="userDetails()">Signup</button>
+    <p>Already have an Account? <a href="./signin.html">Sign in</a></p>
+  </form>
+
+  <script src="./signup.js"></script>
+
+</body>
+</html>

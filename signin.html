@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee</title>
+    <link rel="stylesheet" href="form.css">
+    <!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<script>
+  // signup.html aur signin.html me common check
+let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (loggedInUser) {
+  // agar user already login hai to direct redirect kardo
+  window.location.href = "main.html"; 
+}
+
+</script>
+<body>
+     
+  <form>
+    <h2>Sign In</h2>
+  <input type="text" id="loginUsername" placeholder="Username"><br><br>
+  <input type="email" id="loginEmail" placeholder="Email"><br><br>
+  <input type="password" id="loginPassword" placeholder="Password"><br><br>
+  <!-- 👇 button type must be "button" when using onclick -->
+  <button type="button" onclick="signInUser()">Sign In</button>
+ <p>Don't have account? <a href="./signup.html">Sign up</a></p>
+</form>
+
+
+
+  <script src="./signin.js"></script>
+</body>
+</html>

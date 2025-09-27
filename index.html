@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Clicker+Script&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Jacquard+24&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oooh+Baby&family=Pacifico&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+AU+VIC+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Vinyl&family=Tenor+Sans&display=swap');
+</style>
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<!-- navbar -->
+ <div class="mian-hero-nav">
+  <div class="header">
+    <div class="logo">
+      <a href="">Bean Senne</a>
+    </div>
+     <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="mains" id="menu">
+         <div class="nav-link">
+          <a href="">Home</a>
+          <a href="">Menu</a>
+          <a href="">About Us</a>
+          <a href="">Contact Us</a>
+        </div>
+      <div class="nav-icon">
+        
+        <!-- Normal state (before login) -->
+<nav>
+  <div id="auth-links">
+    <a id="specials-nav" href="./signin.html">Sign in</a>
+    <a id="special-nav" href="./signup.html">Sign Up</a>
+   
+  </div>
+
+  <!-- After login (hidden by default) -->
+  <div class="account-control" id="profile-section" style="display:none;">
+    <span class="account-control-icon" id="profile-icon">👤</span>
+    <span id="username-display"></span>
+    <button class="account-control-btn" id="logout-btn">Logout</button>
+  </div>
+</nav>
+
+<!-- Cart Icon -->
+  <div id="cartIcon" onclick="toggleCart()">
+    🛒
+    <span id="cartCount">0</span>
+  </div>
+
+  <!-- Cart Popup -->
+  <div id="cartBox">
+    <h3>My Cart</h3>
+    <ul id="cartItems"></ul>
+    <div id="totalAmount">Total: $0</div>
+    <button id="orderBtn" onclick="placeOrder()">Order Now</button>
+  </div>
+
+        </div>
+      </div>
+  </div>
+
+  <!-- hero -->
+    <div class="hero">
+            <h1>we've got your morning covered with</h1>
+            <h2>Coffee</h2>
+            <div class="hero-text"><p>It is the best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have . We provide the best for our customers.</p></div>
+            <a href="">Order Now</a>
+        </div>
+ </div>
+  
+ <!-- hero down -->
+          <div class="down-hero">
+    <div class="left-down-hero">
+      <h1>Discover the best coffee</h1>
+      <p>
+        Bean Scene is a coffee shop that provides you with quality coffee
+        that helps boost your productivity and helps build your mood
+        Having a cup of coffee is good, but having a cup of real coffee is greater.
+        There is no doubt that you will enjoy this coffee more than others you have ever tasted.
+      </p>
+      <button class="btn">Learn More</button>
+    </div>
+    <div class="right-down-hero">
+      <img src="./down-hero image.jpg" alt="" />
+    </div>
+  </div>
+
+  <!-- Coffee section card -->
+   <section class="coffee-menu">
+  <h2>Enjoy a new blend of coffee style</h2>
+  <p>Explore all flavours of coffee with us. There is always a new cup worth experiencing</p>
+
+  <div class="grid-container">
+    <div class="coffee-card">
+      <div class="coffee-img">
+        <img src="./coffee card 1.jpg" alt="">
+      </div>
+      <h3>Cappuccino</h3>
+      <p>Coffee 50% | Milk 50%</p>
+      <strong>$9.50</strong>
+     <button onclick="orderNow(1)">Add to cart</button>
+    </div>
+
+    <div class="coffee-card">
+      <div class="coffee-img">
+        <img class="special-card-hero" src="./coffee card2.jpg" alt="">
+      </div>
+      <h3>Chai Latte</h3>
+      <p>Coffee 50% | Milk 50%</p>
+      <strong>$20.50</strong>
+      <button onclick="orderNow(2)">Add to cart</button>
+    </div>
+
+    <div class="coffee-card">
+      <div class="coffee-img">
+        <img src="./coffee card 3.jpg" alt="">
+      </div>
+      <h3>Macchiato</h3>
+      <p>Coffee 50% | Milk 50%</p>
+      <strong>$19.50</strong>
+     <button onclick="orderNow(3)">Add to cart</button>
+    </div>
+
+    <div class="coffee-card">
+      <div class="coffee-img">
+        <img src="./coffee card 4.jpg" alt="">
+      </div>
+      <h3>Expresso</h3>
+      <p>Coffee 50% | Milk 50%</p>
+      <strong>$11.50</strong>
+       <button onclick="orderNow(4)">Add to cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- started card today -->
+  <section class="why-different">
+    <div class="container">
+      <h2>Why are we different?</h2>
+      <p class="subtitle">We don't just make your coffee, we make your day!</p>
+
+      <div class="grid-cards">
+        <div class="card">
+          <img src="./get started 1.png" alt="" />
+          <h3>Supreme Beans</h3>
+          <p>Beans that provides great taste</p>
+        </div>
+        <div class="card">
+          <img src="./get started 2.png" alt="" />
+          <h3>High Quality</h3>
+          <p>We provide the highest quality</p>
+        </div>
+        <div class="card">
+          <img src="./get started 3.png" alt="" />
+          <h3>Extraordinary</h3>
+          <p>Coffee like you have never tasted</p>
+        </div>
+        <div class="card">
+          <img src="get tarted 4.png" alt="" />
+          <h3>Affordable Price</h3>
+          <p>Our Coffee prices are easy to afford</p>
+        </div>
+      </div>
+
+      <div class="cta">
+        <p>Great ideas start with great coffee. Lets help you achieve that</p>
+        <h3>Get started today.</h3>
+        <button class="join-btn">Join Us</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amazing morning -->
+    <section class="heros">
+    <div class="overlay">
+      <div class="heros-content">
+        <div class="text-content">
+          <h1>Get a chance to have an<br><span>Amazing morning</span></h1>
+          <p>We are giving you a one time opportunity to<br>experience a better life with coffee.</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+        <div class="image-content">
+          <img src="./right amazing offer.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- perfection -->
+   <section class="testimonial-section">
+  <div class="container">
+    <h2>Our coffee perfection feedback</h2>
+    <p class="subtitle">Our customers have amazing things to say about us</p>
+
+    <div class="slider">
+      <!-- Left arrow -->
+      <button class="nav-btn prev">&#8592;</button>
+
+      <!-- Testimonial content wrapper -->
+      <div class="testimonial-container" id="testimonial-container">
+        <!-- Decorative splashes -->
+        <img src="./splash-left.png" class="splash splash-left" alt="Splash Left" />
+        <img src="./splash-right.png" class="splash splash-right" alt="Splash Right" />
+        <img src="./splash-center.png" class="splash splash-center" alt="Splash Center" />
+
+        <!-- SLIDE 1 -->
+        <div class="testimonial active">
+          <span class="quote-icon">&#10077;</span>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+          </p>
+          <h3>Jonny Thomas</h3>
+          <span class="role">Project Manager</span>
+          <img src="./man.jpg" alt="Jonny Thomas" class="profile-img" />
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="testimonial">
+          <span class="quote-icon">&#10077;</span>
+          <p>
+            Coffee is the best way to start your day! Amazing service and absolutely delicious.
+            Highly recommend to all coffee lovers.
+          </p>
+          <h3>Susan Allen</h3>
+          <span class="role">Marketing Lead</span>
+          <img src="user2.jpg" alt="Susan Allen" class="profile-img" />
+        </div>
+
+        <!-- Add more .testimonial divs here -->
+      </div>
+
+      <!-- Right arrow -->
+      <button class="nav-btn next">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- last section -->
+ <!-- Subscribe Section -->
+<section class="subscribe-section">
+  <div class="subscribe-container">
+    <h2>Subscribe to get the Latest News</h2>
+    <p class="subtitle">Don’t miss out on our latest news, updates, tips and special offers</p>
+
+    <form class="subscribe-form">
+      <input type="email" placeholder="Enter your mail" required />
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <!-- Coffee cup splash images -->
+    <img src="./cuping.png" alt="Cup Left" class="cup-img cup-left" />
+    <img src="./cuping.png" alt="Cup Right" class="cup-img cup-right" />
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>Bean Scene</h3>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry's standard dummy
+        text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">News & Blogs</a></li>
+          <li><a href="#">Help & Supports</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">How we work</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>Akshya Nagar 1st Block 1st Cross,<br />Rammurthy nagar, Bangalore-560016</p>
+        <p>+1 202-918-2132</p>
+        <p>beanscene@mail.com</p>
+        <p>www.beanscene.com</p>
+      </div>
+    </div>
+
+    <!-- Coffee cup images in footer -->
+  </div>
+</footer>
+
+<!-- order form -->
+ <!-- Checkout Form Modal -->
+<div id="checkoutForm">
+  <div class="form-content">
+    <h3>Complete Your Order</h3>
+    <label>Name:</label>
+    <input type="text" id="custName" required><br>
+
+    <label>Phone:</label>
+    <input type="text" id="custPhone" required><br>
+
+    <label>Address:</label>
+    <textarea id="custAddress" required></textarea><br>
+
+    <label>Date:</label>
+    <input type="date" id="orderDate" required><br>
+
+    <label>Time:</label>
+    <input type="time" id="orderTime" required><br>
+
+    <label>Payment:</label>
+    <select id="paymentMethod">
+      <option value="Cash">Cash</option>
+      <option value="Debit Card">Debit Card</option>
+    </select><br>
+
+    <button onclick="confirmOrder()">Confirm Order</button>
+    <button onclick="closeForm()">Cancel</button>
+  </div>
+</div>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
+
+  <script src="main.js"></script>
+</body>
+</html>
